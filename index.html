@@ -219,12 +219,17 @@
 </p>
 
 <script>
-  fetch('https://api.countapi.xyz/update/care4cancer/github?amount=1')
-    .then(res => res.json())
-    .then(res => {
-      document.getElementById('visits').innerText = res.value;
+  fetch('https://api.countapi.xyz/hit/care4cancer.github.io/visits')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('visits').innerText = data.value;
+    })
+    .catch(error => {
+      document.getElementById('visits').innerText = 'N/A';
+      console.error('Visitor counter error:', error);
     });
 </script>
+
 </body>
 </html>
 
