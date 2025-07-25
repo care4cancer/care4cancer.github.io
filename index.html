@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Care4Cancer - Cancer Education & Tools</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4529/4529980.png"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #1a1a1a;
+    }
+
+    nav {
+      background-color: #1e3a5f;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .logo {
+      color: #ffffff;
+      font-size: 1.6rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffdd57;
+    }
+
+    header {
+      background-color: #264e70;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.95;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #264e70;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 600px;
+      background-color: #ffffff;
+      border-left: 5px solid #90caf9;
+      border-radius: 12px;
+      padding: 25px;
+      margin: 20px auto;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
+
+    .card a {
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: inline-block;
+      color: #264e70;
+    }
+
+    .card.breast { border-left-color: #ec407a; }
+    .card.prostate { border-left-color: #42a5f5; }
+    .card.cervix { border-left-color: #ec407a; }
+
+    footer {
+      background-color: #1e3a5f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      .card a {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="#" class="logo">Care4Cancer</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="https://care4cancer.github.io/incidence/"> Cancer Incidence </a></li>
+      <li><a href="#calculator">Stage Guide</a></li>
+      <li><a href="https://care4cancer.github.io/preventive/"> Preventive Test</a></li>
+      <li><a href="https://care4cancer.github.io/Genetic-Risk-Assessment/">Genetic Risk Assessment</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <header id="home">
+    <h1>Welcome to Care4Cancer</h1>
+    <p>Your trusted hub for comprehensive cancer information, educational resources, and staging tools. Empowering patients, students, and healthcare professionals alike.</p>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Cancer</h2>
+    <p><strong>Cancer</strong> is a group of diseases involving abnormal cell growth with the potential to invade or spread to other parts of the body. It can affect almost any organ or tissue and arises through multiple factors including genetic mutations, environmental exposure, and lifestyle risks.</p>
+
+    <h3>Histology & Morphology</h3>
+    <p><strong>Histology</strong> refers to the study of the microscopic structure of tissues. In cancer, it helps classify tumors as epithelial, mesenchymal, lymphoid, or germ cell derived. <strong>Morphology</strong> describes the shape and structure of tumor cells under the microscope, which aids in identifying cancer type and behavior.</p>
+
+    <h3>Cancer Grading</h3>
+    <p>Grading assesses how much tumor cells differ from healthy cells. Low-grade tumors resemble normal tissue and tend to grow slowly, while high-grade tumors appear abnormal and are often more aggressive. Common grading systems include the Gleason score for prostate cancer and Nottingham score for breast cancer.</p>
+
+    <h3>Cancer Staging</h3>
+    <p>Staging describes how much cancer is in the body and helps determine treatment options and prognosis. The most widely used system is the TNM classification developed by the American Joint Committee on Cancer (AJCC):</p>
+    <ul>
+      <li><strong>T (Tumor):</strong> Size and extent of the primary tumor</li>
+      <li><strong>N (Nodes):</strong> Involvement of regional lymph nodes</li>
+      <li><strong>M (Metastasis):</strong> Spread to distant organs</li>
+    </ul>
+    <p>Stages range from 0 (in situ) to IV (advanced/metastatic). Source: <a href="https://www.cancer.gov/about-cancer/diagnosis-staging/staging" target="_blank">National Cancer Institute</a></p>
+    <p><strong>Cancer Staging Based on Tumor Size and Dissemination:</strong><br />
+    Oncologists utilize a numerical staging system to classify the extent of malignant disease progression. The stages are defined as follows:</p>
+
+    <p><strong>Stage 0:</strong> Carcinoma in situ — atypical epithelial cells are present but confined to the basement membrane without invasion into adjacent tissues. This stage represents pre-invasive neoplasia and is often curable with local treatment.</p>
+
+    <p><strong>Stage I:</strong> Localized malignancy — the primary tumor is small in dimension, confined to the organ of origin, and shows no evidence of regional lymphatic or distant metastasis.</p>
+
+    <p><strong>Stage II:</strong> Locally advanced cancer — the neoplasm has increased in size and/or exhibits limited spread to regional lymph nodes, but without distant metastatic involvement.</p>
+
+    <p><strong>Stage III:</strong> Regionally advanced disease — the tumor demonstrates extensive local invasion into surrounding tissues and/or has metastasized to multiple or large regional lymph nodes.</p>
+
+    <p><strong>Stage IV:</strong> Metastatic cancer — malignant cells have disseminated beyond the primary site and regional nodes to distant organs, indicating systemic disease.</p>
+  </section>
+
+  <!-- Calculator Section -->
+  <section id="calculator">
+    <h2>Cancer Staging Guide</h2>
+    <p>Use our staging calculators to explore stage classification based on established guidelines. Ideal for clinicians, students, and patient education.</p>
+
+    <div class="card breast">
+      <a href="https://care4cancer.github.io/Breast-Cancer-Staging/">
+         Breast Cancer Staging Guide
+      </a>
+    </div>
+    
+    <div class="card prostate">
+      <a href="https://care4cancer.github.io/Prostate-Cancer-Staging/">
+         Prostate Cancer Staging Guide
+      </a>
+    </div>
+    <div class="card cervix">
+      <a href="https://care4cancer.github.io/Cervical-cancer-staging/">
+         Cervical Cancer Staging Guide
+      </a>
+    </div>
+  </section>
+  <!-- Visitor Counter -->
+<p style="text-align:center; margin-top: 20px;">
+  Visitor Count: <span id="visits"></span>
+</p>
+
+<script>
+  fetch('https://api.countapi.xyz/update/care4cancer/github?amount=1')
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById('visits').innerText = res.value;
+    });
+</script>
+</body>
+</html>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have questions, suggestions, or would like to collaborate, please reach out to us:</p>
+    <ul>
+      <li>Email: <a href="mailto:care4cancer.help@gmail.com">care4cancer.help@gmail.com</a></li>
+      <li>GitHub: <a href="https://github.com/care4cancer" target="_blank">github.com/care4cancer</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Care4Cancer. Empowering education through accessible cancer knowledge.
+  </footer>
+
+</body>
+</html>
