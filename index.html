@@ -5,28 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Care4Cancer - Cancer Education & Tools</title>
   <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4529/4529980.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f4f8;
-      color: #1a1a1a;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f3;
+      color: #3c3c3b;
+      line-height: 1.6;
     }
 
     nav {
-      background-color: #1e3a5f;
-      padding: 15px 30px;
+      background: linear-gradient(180deg, #e8e5d9, #d8d3b8);
+      padding: 10px 30px; /* Reduced padding */
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav .logo {
-      color: #ffffff;
-      font-size: 1.6rem;
-      font-weight: bold;
+      color: #4a7043;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
       text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav .logo:hover {
+      color: #355e2e;
     }
 
     nav ul {
@@ -38,84 +50,141 @@
     }
 
     nav ul li a {
-      color: #ffffff;
+      color: #3c3c3b;
       text-decoration: none;
       font-size: 1rem;
-      transition: color 0.3s;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
     nav ul li a:hover {
-      color: #ffdd57;
+      background: #e8e5d9;
+      color: #4a7043;
     }
 
     header {
-      background-color: #264e70;
-      color: white;
+      background: linear-gradient(180deg, rgba(168, 202, 186, 0.7), rgba(244, 217, 198, 0.7)), url('care4cancer.jpg') no-repeat center/cover;
+      color: #3c3c3b;
       text-align: center;
-      padding: 60px 20px;
+      padding: 30px 20px; /* Reduced padding */
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
-      margin-bottom: 20px;
+      margin-bottom: 10px; /* Reduced margin */
+      color: #4a7043;
+      position: relative;
+      z-index: 2;
     }
 
     header p {
       font-size: 1.25rem;
       max-width: 800px;
       margin: 0 auto;
-      opacity: 0.95;
+      color: #3c3c3b;
+      position: relative;
+      z-index: 2;
     }
 
     section {
-      padding: 60px 20px;
+      padding: 20px 20px; /* Further reduced padding */
       max-width: 900px;
       margin: auto;
     }
 
     section h2 {
+      font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
-      color: #264e70;
-      margin-bottom: 20px;
+      color: #4a7043;
+      margin: 0 0 8px; /* Further reduced margin to minimize space above */
+      text-align: center;
+    }
+
+    section h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      color: #4a7043;
+      margin: 10px 0 8px; /* Reduced margin */
+    }
+
+    section p, section ul {
+      font-size: 1rem;
+      color: #3c3c3b;
+      line-height: 1.8;
+      margin: 6px 0; /* Reduced margin */
+    }
+
+    section a {
+      color: #e57373;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    section a:hover {
+      color: #d32f2f;
     }
 
     .card {
       width: 100%;
       max-width: 600px;
-      background-color: #ffffff;
-      border-left: 5px solid #90caf9;
+      background: #ffffff;
       border-radius: 12px;
-      padding: 25px;
-      margin: 20px auto;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      padding: 15px; /* Reduced padding */
+      margin: 8px auto; /* Further reduced margin */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%234a7043" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3-9c0 1.66-1.34 3-3 3s-3-1.34-3-3 1.34-3 3-3 3 1.34 3 3z"/></svg>') no-repeat top left;
+      background-size: 50px;
+      opacity: 0.1;
     }
 
     .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     }
 
     .card a {
       text-decoration: none;
       font-size: 1.5rem;
       font-weight: 600;
+      font-family: 'Montserrat', sans-serif;
+      color: #3c3c3b;
       display: inline-block;
-      color: #264e70;
+      transition: color 0.3s ease;
     }
 
-    .card.breast { border-left-color: #ec407a; }
-    .card.prostate { border-left-color: #42a5f5; }
-    .card.cervix { border-left-color: #ec407a; }
+    .card a:hover {
+      color: #4a7043;
+    }
+
+    .card.breast { border-left: 5px solid #e57373; }
+    .card.prostate { border-left: 5px solid #4fc3f7; }
+    .card.cervix { border-left: 5px solid #4db6ac; }
 
     footer {
-      background-color: #1e3a5f;
-      color: white;
+      background: linear-gradient(180deg, #e8e5d9, #d8d3b8);
+      color: #3c3c3b;
       text-align: center;
-      padding: 20px;
+      padding: 12px; /* Reduced padding */
       font-size: 0.9rem;
-      margin-top: 60px;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 768px) {
@@ -123,16 +192,43 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-        margin-top: 10px;
+        margin-top: 8px; /* Reduced margin */
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .card a {
+        font-size: 1.3rem;
       }
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 1.1rem;
       }
       .card a {
         font-size: 1.2rem;
+      }
+      section {
+        padding: 15px 15px; /* Further reduced for mobile */
+      }
+      section h2 {
+        margin: 0 0 6px; /* Tighter spacing on mobile */
+      }
+      section h3 {
+        margin: 8px 0 6px; /* Reduced for mobile */
+      }
+      section p, section ul {
+        margin: 4px 0; /* Reduced for mobile */
+      }
+      .card {
+        padding: 12px; /* Reduced for mobile */
+        margin: 6px auto; /* Reduced for mobile */
       }
     }
   </style>
@@ -145,9 +241,9 @@
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="https://care4cancer.github.io/incidence/"> Cancer Incidence </a></li>
+      <li><a href="https://care4cancer.github.io/incidence/">Cancer Incidence</a></li>
       <li><a href="#calculator">Stage Guide</a></li>
-      <li><a href="https://care4cancer.github.io/preventive/"> Preventive Test</a></li>
+      <li><a href="https://care4cancer.github.io/preventive/">Preventive Test</a></li>
       <li><a href="https://care4cancer.github.io/Genetic-Risk-Assessment/">Genetic Risk Assessment</a></li>
     </ul>
   </nav>
@@ -213,26 +309,6 @@
       </a>
     </div>
   </section>
-  <!-- Visitor Counter -->
-<p style="text-align:center; margin-top: 20px;">
-  Visitor Count: <span id="visits"></span>
-</p>
-
-<script>
-  fetch('https://api.countapi.xyz/hit/care4cancer.github.io/visits')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('visits').innerText = data.value;
-    })
-    .catch(error => {
-      document.getElementById('visits').innerText = 'N/A';
-      console.error('Visitor counter error:', error);
-    });
-</script>
-
-</body>
-</html>
-
 
   <!-- Contact Section -->
   <section id="contact">
@@ -248,6 +324,5 @@
   <footer>
     &copy; 2025 Care4Cancer. Empowering education through accessible cancer knowledge.
   </footer>
-
 </body>
 </html>
