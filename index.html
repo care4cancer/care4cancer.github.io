@@ -2,11 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Care4Cancer - Cancer Awareness</title>
-  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/4529/4529980.png"/>
+
+  <!-- Minimal C4C browser favicon; no external image required -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%234a7043'/%3E%3Ctext x='32' y='41' font-family='Arial,sans-serif' font-size='24' font-weight='700' text-anchor='middle' fill='white'%3EC4C%3C/text%3E%3C/svg%3E" />
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -17,21 +26,26 @@
 
     nav {
       background: linear-gradient(180deg, #e8e5d9, #d8d3b8);
-      padding: 10px 30px; /* Reduced padding */
+      padding: 10px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 12px;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    /* C4C lettermark and Care4Cancer wordmark */
     nav .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       color: #4a7043;
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
       text-decoration: none;
       transition: color 0.3s ease;
@@ -41,10 +55,37 @@
       color: #355e2e;
     }
 
+    nav .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #4a7043;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+      transition: background 0.3s ease;
+    }
+
+    nav .logo:hover .logo-mark {
+      background: #355e2e;
+    }
+
+    nav .logo-text {
+      white-space: nowrap;
+    }
+
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 10px 20px;
       margin: 0;
       padding: 0;
     }
@@ -68,7 +109,7 @@
       background: linear-gradient(180deg, rgba(168, 202, 186, 0.7), rgba(244, 217, 198, 0.7)), url('care4cancer.jpg') no-repeat center/cover;
       color: #3c3c3b;
       text-align: center;
-      padding: 30px 20px; /* Reduced padding */
+      padding: 30px 20px;
       position: relative;
       overflow: hidden;
     }
@@ -76,7 +117,7 @@
     header h1 {
       font-family: 'Montserrat', sans-serif;
       font-size: 2.8rem;
-      margin-bottom: 10px; /* Reduced margin */
+      margin-bottom: 10px;
       color: #4a7043;
       position: relative;
       z-index: 2;
@@ -92,7 +133,7 @@
     }
 
     section {
-      padding: 20px 20px; /* Further reduced padding */
+      padding: 20px;
       max-width: 900px;
       margin: auto;
     }
@@ -101,7 +142,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
       color: #4a7043;
-      margin: 0 0 8px; /* Further reduced margin to minimize space above */
+      margin: 0 0 8px;
       text-align: center;
     }
 
@@ -109,14 +150,15 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 1.5rem;
       color: #4a7043;
-      margin: 10px 0 8px; /* Reduced margin */
+      margin: 10px 0 8px;
     }
 
-    section p, section ul {
+    section p,
+    section ul {
       font-size: 1rem;
       color: #3c3c3b;
       line-height: 1.8;
-      margin: 6px 0; /* Reduced margin */
+      margin: 6px 0;
     }
 
     section a {
@@ -134,8 +176,8 @@
       max-width: 600px;
       background: #ffffff;
       border-radius: 12px;
-      padding: 15px; /* Reduced padding */
-      margin: 8px auto; /* Further reduced margin */
+      padding: 15px;
+      margin: 8px auto;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       text-align: center;
@@ -183,17 +225,22 @@
       background: linear-gradient(180deg, #e8e5d9, #d8d3b8);
       color: #3c3c3b;
       text-align: center;
-      padding: 12px; /* Reduced padding */
+      padding: 12px;
       font-size: 0.9rem;
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
 
     @media (max-width: 768px) {
+      nav {
+        padding: 10px 18px;
+      }
+
       nav ul {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-        margin-top: 8px; /* Reduced margin */
+        margin-top: 8px;
+        width: 100%;
       }
 
       header h1 {
@@ -206,30 +253,48 @@
     }
 
     @media (max-width: 600px) {
+      nav .logo {
+        font-size: 1.3rem;
+      }
+
+      nav .logo-mark {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+      }
+
       header h1 {
         font-size: 1.8rem;
       }
+
       header p {
         font-size: 1.1rem;
       }
+
       .card a {
         font-size: 1.2rem;
       }
+
       section {
-        padding: 15px 15px; /* Further reduced for mobile */
+        padding: 15px;
       }
+
       section h2 {
-        margin: 0 0 6px; /* Tighter spacing on mobile */
+        margin: 0 0 6px;
       }
+
       section h3 {
-        margin: 8px 0 6px; /* Reduced for mobile */
+        margin: 8px 0 6px;
       }
-      section p, section ul {
-        margin: 4px 0; /* Reduced for mobile */
+
+      section p,
+      section ul {
+        margin: 4px 0;
       }
+
       .card {
-        padding: 12px; /* Reduced for mobile */
-        margin: 6px auto; /* Reduced for mobile */
+        padding: 12px;
+        margin: 6px auto;
       }
     }
   </style>
@@ -238,7 +303,11 @@
 
   <!-- Navigation Bar -->
   <nav>
-    <a href="#" class="logo">Care4Cancer</a>
+    <a href="#home" class="logo" aria-label="Care4Cancer home">
+      <span class="logo-mark" aria-hidden="true">C4C</span>
+      <span class="logo-text">Care4Cancer</span>
+    </a>
+
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
@@ -261,7 +330,7 @@
     <h2>About Cancer</h2>
     <p><strong>Cancer</strong> is a group of diseases involving abnormal cell growth with the potential to invade or spread to other parts of the body. It can affect almost any organ or tissue and arises through multiple factors including genetic mutations, environmental exposure, and lifestyle risks.</p>
 
-    <h3>Histology & Morphology</h3>
+    <h3>Histology &amp; Morphology</h3>
     <p><strong>Histology</strong> refers to the study of the microscopic structure of tissues. In cancer, it helps classify tumors as epithelial, mesenchymal, lymphoid, or germ cell derived. <strong>Morphology</strong> describes the shape and structure of tumor cells under the microscope, which aids in identifying cancer type and behavior.</p>
 
     <h3>Cancer Grading</h3>
@@ -274,8 +343,9 @@
       <li><strong>N (Nodes):</strong> Involvement of regional lymph nodes</li>
       <li><strong>M (Metastasis):</strong> Spread to distant organs</li>
     </ul>
-    <p>Stages range from 0 (in situ) to IV (advanced/metastatic). Source: <a href="https://www.cancer.gov/about-cancer/diagnosis-staging/staging" target="_blank">National Cancer Institute</a></p>
-    <p><strong>Cancer Staging Based on Tumor Size and Dissemination:</strong><br />
+    <p>Stages range from 0 (in situ) to IV (advanced/metastatic). Source: <a href="https://www.cancer.gov/about-cancer/diagnosis-staging/staging" target="_blank" rel="noopener noreferrer">National Cancer Institute</a></p>
+
+    <p><strong>Cancer Staging Based on Tumor Size and Dissemination:</strong><br>
     Oncologists utilize a numerical staging system to classify the extent of malignant disease progression. The stages are defined as follows:</p>
 
     <p><strong>Stage 0:</strong> Carcinoma in situ — atypical epithelial cells are present but confined to the basement membrane without invasion into adjacent tissues. This stage represents pre-invasive neoplasia and is often curable with local treatment.</p>
@@ -295,23 +365,25 @@
     <p>Use our staging calculators to explore stage classification based on established guidelines. Ideal for clinicians, students, and patient education.</p>
 
     <div class="card breast">
-      <a href="https://care4cancer.github.io/Breast-Cancer-Staging/"> Breast Cancer Staging Guide </a>
+      <a href="https://care4cancer.github.io/Breast-Cancer-Staging/">Breast Cancer Staging Guide</a>
     </div>
-    
+
     <div class="card prostate">
-      <a href="https://care4cancer.github.io/Prostate-Cancer-Staging/"> Prostate Cancer Staging Guide </a>
+      <a href="https://care4cancer.github.io/Prostate-Cancer-Staging/">Prostate Cancer Staging Guide</a>
     </div>
+
     <div class="card cervix">
-      <a href="https://care4cancer.github.io/Cervical-cancer-staging/"> Cervical Cancer Staging Guide </a>
+      <a href="https://care4cancer.github.io/Cervical-cancer-staging/">Cervical Cancer Staging Guide</a>
     </div>
   </section>
+
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>If you have questions, suggestions, or would like to collaborate, please reach out to us:</p>
     <ul>
       <li>Email: <a href="mailto:care4cancer.help@gmail.com">care4cancer.help@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/care4cancer" target="_blank">github.com/care4cancer</a></li>
+      <li>GitHub: <a href="https://github.com/care4cancer" target="_blank" rel="noopener noreferrer">github.com/care4cancer</a></li>
     </ul>
   </section>
 
@@ -319,5 +391,6 @@
   <footer>
     &copy; 2025 Care4Cancer. Empowering education through accessible cancer knowledge.
   </footer>
+
 </body>
 </html>
